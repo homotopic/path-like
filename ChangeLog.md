@@ -1,5 +1,9 @@
 # Changelog for path-like
 
+## (v0.1.2.0)
+
+* Change to ConstraintKinds style.
+
 ## (v0.1.1.0)
 
 * Add 'PathLike` superclass to `FileLike` and `DirLike`.
