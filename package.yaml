@@ -1,0 +1,22 @@
+name:                path-like
+version:             0.1.0.0
+git:                 https://gitlab.com/homotopic-tech/path-like
+license:             MIT
+author:              "Daniel Firth"
+maintainer:          "dan.firth@homotopic.tech"
+copyright:           "2020 Daniel Firth"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            FileLike and DirLike type classes for the Path library.
+category:            Filesystem
+description:         Type classes for the Path library. Exports FileLike and DirLike classes so that stricter types may be used as Paths.
+
+dependencies:
+- base >= 4.7 && < 5
+- path
+
+library:
+  source-dirs: src
