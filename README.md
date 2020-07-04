@@ -1,6 +1,6 @@
 # path-like - Type classes for the Path library.
 
-This library exports two type classes `FileLike` and `DirLike` which serve as a
+This library exports type classes `PathLike`, `FileLike` and `DirLike` which serve as a
 common interface for compiling types down to `Path b File` and `Path b Dir`.
 The only contract that should be respected is that your type should be at least
 as strict as the `Path` type itself, i.e no String/FilePath instances. This is

@@ -10,9 +10,9 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
-synopsis:            FileLike and DirLike type classes for the Path library.
+synopsis:            PathLike, FileLike and DirLike type classes for the Path library.
 category:            Filesystem
-description:         Type classes for the Path library. Exports FileLike and DirLike classes so that stricter types may be used as Paths.
+description:         Type classes for the Path library. Exports PathLike, FileLike and DirLike classes so that stricter types may be used as Paths.
 
 dependencies:
 - base >= 4.7 && < 5
