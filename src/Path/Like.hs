@@ -1,3 +1,4 @@
+{-# LANGUAGE ConstraintKinds        #-}
 {-# LANGUAGE FlexibleContexts       #-}
 {-# LANGUAGE FlexibleInstances      #-}
 {-# LANGUAGE FunctionalDependencies #-}
@@ -14,8 +15,10 @@ Type classes for compiling down to well-typed `Path`s.
 
 module Path.Like (
   PathLike(..)
-, FileLike(..)
-, DirLike(..)
+, FileLike
+, DirLike
+, toFile
+, toDir
 , (/>)
 ) where
 
@@ -25,21 +28,14 @@ import Path
 class PathLike b t a | a -> b, a -> t where
   toPath :: a -> Path b t
 
--- | Class representing a type `a` that can be compiled down to a `Path b File`.
-class PathLike b File a => FileLike b a where
-  toFile :: a -> Path b File
-  toFile = toPath
+type FileLike b a = PathLike b File a
+type DirLike b a = PathLike b Dir a
 
--- | Class repreenting a type `a` that can be compiled down to a `Path b Dir`.
-class PathLike b Dir a => DirLike b a where
-  toDir :: a -> Path b Dir
-  toDir = toPath
+toFile :: FileLike b a => a -> Path b File
+toFile = toPath
 
-instance PathLike b t (Path b t) where
-  toPath = id
-
-instance FileLike b (Path b File)
-instance DirLike b (Path b Dir)
+toDir :: DirLike b a  => a -> Path b Dir
+toDir = toPath
 
 -- | Like `Path.</>`, but works for any `DirLike` and relative `FileLike` to produce a concrete `Path`.
 (/>) :: (DirLike b a, FileLike Rel c) => a -> c -> Path b File
