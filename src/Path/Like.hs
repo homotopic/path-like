@@ -14,6 +14,7 @@
 module Path.Like (
   FileLike(..)
 , DirLike(..)
+, (/>)
 ) where
 
 import Path
