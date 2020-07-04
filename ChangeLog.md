@@ -1,8 +1,8 @@
 # Changelog for path-like
 
-## (v0.1.2.0)
+## (v0.2.0.0)
 
-* Change to ConstraintKinds style.
+* Revert ConstraintKinds mess.
 
 ## (v0.1.1.0)
 
