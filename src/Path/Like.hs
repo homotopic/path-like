@@ -1,7 +1,6 @@
 {-# LANGUAGE FlexibleContexts       #-}
 {-# LANGUAGE FlexibleInstances      #-}
 {-# LANGUAGE FunctionalDependencies #-}
-{-# LANGUAGE MultiParamTypeClasses  #-}
 {- |
    Module      : Path.Like
    Copyright   : Copyright (C) 2020 Daniel Firth
@@ -43,4 +42,4 @@ instance DirLike b (Path b Dir)
 
 -- | Like `Path.</>`, but works for any `DirLike` and relative `FileLike` to produce a concrete `Path`.
 (/>) :: (DirLike b a, FileLike Rel c) => a -> c -> Path b File
-(/>) x y = (toDir x) </> (toFile y)
+(/>) x y = toDir x </> toFile y
