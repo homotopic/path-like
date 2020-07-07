@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           path-like
-version:        0.2.0.0
+version:        0.2.0.1
 synopsis:       PathLike, FileLike and DirLike type classes for the Path library.
 description:    Type classes for the Path library. Exports PathLike, FileLike and DirLike classes so that stricter types may be used as Paths.
 category:       Filesystem
