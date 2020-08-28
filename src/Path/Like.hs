@@ -3,8 +3,6 @@
 {-# LANGUAGE FunctionalDependencies #-}
 {- |
    Module      : Path.Like
-   Copyright   : Copyright (C) 2020 Daniel Firth
-   Maintainer  : Daniel Firth <dan.firth@homotopic.tech>
    License     : MIT
    Stability   : experimental
 
